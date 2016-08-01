@@ -29,18 +29,22 @@ describe('awatch', function () {
     let changed = {}
     let close = yield awatch(`${__dirname}/../tmp/*`, (event, filename) => {
       changed[ filename ] = (changed[ filename ] || 0) + 1
-    }, { interval: 10 })
-    yield writeout(filename, 'hoge2')
-    yield asleep(100)
-    assert.equal(changed[ path.basename(filename) ], 1)
-    yield writeout(filename, 'hoge3')
-    yield asleep(100)
-    assert.equal(changed[ path.basename(filename) ], 2)
-    yield asleep(100)
-    fs.renameSync(filename, `${filename}.bk`)
-    yield writeout(filename, 'hoge4')
-    yield asleep(100)
-    assert.equal(changed[ path.basename(filename) ], 3)
+    }, { interval: 1 })
+    for (let i = 0; i < 20; i++) {
+      yield writeout(filename, 'hoge2')
+      yield asleep(20)
+      assert.equal(changed[ path.basename(filename) ], 1)
+      yield writeout(filename, 'hoge3')
+      yield asleep(20)
+      assert.equal(changed[ path.basename(filename) ], 2)
+      yield asleep(20)
+      fs.renameSync(filename, `${filename}.bk`)
+      yield writeout(filename, 'hoge4')
+      yield asleep(20)
+      assert.equal(changed[ path.basename(filename) ], 3)
+      yield asleep(20)
+      changed = {}
+    }
     yield close()
   }))
 })
