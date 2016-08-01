@@ -1,6 +1,6 @@
 {
   "name": "awatch",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Async file watcher",
   "main": "lib",
   "scripts": {
