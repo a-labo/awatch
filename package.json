@@ -22,21 +22,20 @@
   },
   "homepage": "https://github.com/a-labo/awatch#readme",
   "dependencies": {
-    "aglob": "^1.0.1",
-    "co": "^4.6.0",
-    "debug": "^2.2.0",
+    "aglob": "^1.0.2",
     "asleep": "^1.0.3",
-    "defaults": "^1.0.3"
+    "co": "^4.6.0",
+    "debug": "^2.2.0"
   },
   "devDependencies": {
-    "amocha": "^1.0.11",
+    "amocha": "^1.0.14",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.8",
     "ape-tmpl": "^5.0.15",
     "ape-updating": "^4.0.5",
-    "coz": "^6.0.16",
+    "coz": "^6.0.17",
     "injectmock": "^2.0.0",
     "writeout": "^2.0.7"
   },
