@@ -29,7 +29,7 @@ describe('awatch', function () {
       rimraf(`${__dirname}/../tmp/foo`, (err) =>
         err ? reject(err) : resolve())
     )
-    let filename = `${__dirname}/../tmp/foo/bar.txt`
+    let filename = path.resolve(`${__dirname}/../tmp/foo/bar.txt`)
     yield writeout(filename, 'hoge', { mkdirp: true, force: true })
     let changed = {}
     let close = yield awatch(`${__dirname}/../tmp/*`, (event, filename) => {
@@ -38,15 +38,15 @@ describe('awatch', function () {
     for (let i = 0; i < 10; i++) {
       yield writeout(filename, 'hoge2')
       yield asleep(20)
-      assert.equal(changed[ path.basename(filename) ], 1)
+      assert.equal(changed[ path.resolve(filename) ], 1)
       yield writeout(filename, 'hoge3')
       yield asleep(20)
-      assert.equal(changed[ path.basename(filename) ], 2)
+      assert.equal(changed[ path.resolve(filename) ], 2)
       yield asleep(20)
       fs.renameSync(filename, `${filename}.bk`)
       yield writeout(filename, 'hoge4')
       yield asleep(20)
-      assert.ok(changed[ path.basename(filename) ])
+      assert.ok(changed[ path.resolve(filename) ])
       yield asleep(20)
       changed = {}
     }

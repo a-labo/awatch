@@ -1,11 +1,11 @@
 {
   "name": "awatch",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Async file watcher",
   "main": "lib",
   "scripts": {
     "test": "./ci/test.js",
-    "prepublish": "./ci/build.js"
+    "prepare": "./ci/build.js"
   },
   "repository": "a-labo/awatch",
   "keywords": [
@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/a-labo/awatch#readme",
   "dependencies": {
-    "aglob": "^1.0.2",
+    "aglob": "^2.0.1",
     "asleep": "^1.0.3",
     "co": "^4.6.0",
     "debug": "^2.2.0"
   },
   "devDependencies": {
-    "amocha": "^1.0.14",
+    "amocha": "^2.0.0",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
@@ -42,6 +42,6 @@
   },
   "engines": {
     "node": ">=6",
-    "npm": ">=3"
+    "npm": ">=4"
   }
 }
