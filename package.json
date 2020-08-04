@@ -1,6 +1,6 @@
 {
   "name": "awatch",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Async file watcher",
   "main": "lib",
   "scripts": {
@@ -34,10 +34,9 @@
     "ape-tasking": "^4.0.12",
     "ape-tmpl": "^6.0.14",
     "ape-updating": "^5.0.3",
-    "co": "^4.6.0",
     "coz": "^7.2.0",
     "injectmock": "^2.0.0",
-    "rimraf": "^2.7.1",
+    "rimraf": "^3.0.2",
     "writeout": "^2.3.2"
   },
   "engines": {
